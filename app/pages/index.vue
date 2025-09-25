@@ -30,16 +30,18 @@ const cards = ref([
 
 <template>
     <UPageHero title="This is my first Nuxt Hero page" description="This is the discription"
-        headline="This is the headline" :links='links' class="max-h-full">
+        headline="This is the headline" :links='links' class="max-h-full" orientation="horizontal">
         <!-- <USeparator size="lg" /> -->
+        <NuxtImg src="https://picsum.photos/704/1294" alt="Illustration"
+            class="w-[600px] h-[600px] rounded-lg" />
     </UPageHero>
 
     <USeparator size="lg" class="px-30" />
 
     <UPageSection title="This is the section title" description="This is the section description" :features="cards"
         orientation="horizontal">
-        <img src="https://picsum.photos/704/1294" width="200" height="400" alt="Illustration"
-            class="w-full rounded-lg" />
+        <NuxtImg src="https://picsum.photos/704/1294"  alt="Illustration"
+            class="w-[600px] h-[600px] rounded-lg" />
 
     </UPageSection>
 
@@ -47,11 +49,28 @@ const cards = ref([
 
     <UPageSection title="This is the section title" description="This is the section description" :features="cards"
         orientation="horizontal" reverse>
-        <img src="https://picsum.photos/704/1294" width="200" height="400" alt="Illustration"
-            class="w-full rounded-lg" />
+        <NuxtImg src="https://picsum.photos/704/1294" alt="Illustration"
+            class="w-[600px] h-[600px] rounded-lg" />
     </UPageSection>
 
     <USeparator size="lg" class="px-30" />
+
+    <UPageSection class="px:1">
+        <UPageColumns :columns="3" >
+
+            <UPageCard v-for="card in cards" :title="card.title" :description="card.description" reverse>
+                <NuxtImg src="https://picsum.photos/704/1294" alt="Illustration"
+                    class="w-auto h-auto rounded-lg" />
+            </UPageCard>
+        </UPageColumns>
+    </UPageSection>
+
+    <!-- Do a form here -->
+
+
+
+
+    <!--<USeparator size="lg" class="px-30" />
 
     <UPageSection title="This is the section title" description="This is the section description" :features="cards"
         orientation="horizontal">
@@ -59,13 +78,13 @@ const cards = ref([
             class="w-full rounded-lg" />
     </UPageSection>
 
-    <USeparator size="lg" class="px-30"/>
+    <USeparator size="lg" class="px-30" />
 
     <UPageSection title="This is the section title" description="This is the section description" :features="cards"
         orientation="horizontal" reverse>
         <img src="https://picsum.photos/704/1294" width="200" height="400" alt="Illustration"
             class="w-full rounded-lg" />
-    </UPageSection>
+    </UPageSection> -->
 
     <!-- <section class="bg-red-500">
         <h1>Welcome to My First Nuxt Page</h1>
