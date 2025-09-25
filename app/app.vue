@@ -1,6 +1,30 @@
+<script lang="ts" setup>
+  import type { NavigationMenuItem } from '@nuxt/ui'
+
+const route = useRoute()
+
+const items = computed<NavigationMenuItem[]>(() => [
+  {
+    label: 'Docs',
+    to: '/',
+  },
+  {
+    label: 'About',
+    to: '/about',
+  },
+  {
+    label: 'Forms',
+    to: '/forms',
+
+  },
+]) 
+</script>
+
 <template>
   <UApp>
-    <UHeader title="My first Nuxt page"/>
+    <UHeader title="My first Nuxt page">
+      <UNavigationMenu :items="items"/>
+    </UHeader>
 
     <UMain>
       <NuxtLayout>
