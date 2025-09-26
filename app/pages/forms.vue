@@ -2,6 +2,8 @@
 import * as z from 'zod'
 import type { FormSubmitEvent } from '@nuxt/ui'
 
+
+// Form schema
 const schema = z.object({
   email: z.email('Invalid email'),
   password: z.string('Password is required').min(8, 'Must be at least 8 characters')
@@ -16,6 +18,10 @@ const state = reactive<Partial<Schema>>({
 
 const toast = useToast()
 async function onSubmit(event: FormSubmitEvent<Schema>) {
+  await $fetch('/api/testdb',{
+    method: 'POST',
+    body: event.data
+  })
   toast.add({ title: 'Success', description: 'The form has been submitted.', color: 'success' })
   console.log(event.data)
 }

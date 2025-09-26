@@ -5,7 +5,7 @@ const route = useRoute()
 
 const items = computed<NavigationMenuItem[]>(() => [
   {
-    label: 'Docs',
+    label: 'Home',
     to: '/',
   },
   {
@@ -17,10 +17,16 @@ const items = computed<NavigationMenuItem[]>(() => [
     to: '/forms',
 
   },
+  {
+    label: 'Database Data',
+    to: '/databaseData',
+
+  },
 ]) 
 </script>
 
 <template>
+  <NuxtIsland name="testdb"></NuxtIsland>
   <UApp>
     <UHeader title="My first Nuxt page">
       <UNavigationMenu :items="items"/>

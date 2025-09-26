@@ -22,8 +22,8 @@ const cards = ref([
         <img src="https://picsum.photos/704/1294" width="200" height="400" alt="Illustration"
             class="w-full rounded-lg" />
     </UPageSection>
-    <section class="bg-orange-500">
+    <!-- <section class="bg-orange-500">
         <h1>Welcome to About Page</h1>
         <p>This is a simple page created with Nuxt.js and Ukit.</p>
-    </section>
+    </section> -->
 </template>
