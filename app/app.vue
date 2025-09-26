@@ -18,8 +18,8 @@ const items = computed<NavigationMenuItem[]>(() => [
 
   },
   {
-    label: 'Database Data',
-    to: '/databaseData',
+    label: 'Login',
+    to: '/Login',
 
   },
 ]) 
