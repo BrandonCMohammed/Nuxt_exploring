@@ -69,8 +69,8 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 
 <template>
   <UPage class="flex items-center justify-center">
-    <UPageSection>
-      <UAuthForm class="max-w-md" title="Login" :fields="fields" @submit="onSubmit"/>
+    <UPageSection >
+      <UAuthForm class="space-y-4 flex justify-center flex-col items-center max-w-full"  title="Login" :fields="fields" @submit="onSubmit"/>
 
     </UPageSection>
   </UPage>

@@ -26,7 +26,7 @@ const items = computed<NavigationMenuItem[]>(() => [
 </script>
 
 <template>
-  <NuxtIsland name="testdb"></NuxtIsland>
+  <!-- <NuxtIsland name="testdb"></NuxtIsland> -->
   <UApp>
     <UHeader title="My first Nuxt page">
       <UNavigationMenu :items="items"/>

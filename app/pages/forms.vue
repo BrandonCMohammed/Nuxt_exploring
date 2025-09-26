@@ -18,7 +18,7 @@ const state = reactive<Partial<Schema>>({
 
 const toast = useToast()
 async function onSubmit(event: FormSubmitEvent<Schema>) {
-  await $fetch('/api/testdb',{
+  await $fetch('/api/testdb', {
     method: 'POST',
     body: event.data
   })
@@ -32,7 +32,12 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 
     <UPageSection>
 
-      <UForm :schema="schema" :state="state" class="space-y-4" @submit="onSubmit">
+      <UForm :schema="schema" :state="state" class="space-y-4 flex justify-center flex-col items-center max-w-full"  title="User Registration"
+        @submit="onSubmit">
+        <h1 class="font-bold mb-8">
+
+          User Registration
+        </h1>
         <UFormField label="Email" name="email">
           <UInput v-model="state.email" />
         </UFormField>
@@ -41,7 +46,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
           <UInput v-model="state.password" type="password" />
         </UFormField>
 
-        <UButton type="submit">
+        <UButton type="submit" class="w-44">
           Submit
         </UButton>
       </UForm>
